@@ -16,7 +16,7 @@ Landing page dla usługi analizy rzutów mieszkań przy pomocy sztucznej intelig
 **Elementy wizualne:**
 - Mockup rzutu mieszkania z nałożonymi wskaźnikami AI
 - Ikony przedstawiające: niezależność, analiza, bezpieczeństwo
-- Przycisk CTA: "Przetestuj za darmo - wersja BETA"
+- Przycisk CTA: "Przetestuj w promocyjnej cenie - wersja BETA"
 
 ### 2. Propozycja wartości
 **Sekcja: "Dlaczego warto sprawdzić mieszkanie przed zakupem?"**
