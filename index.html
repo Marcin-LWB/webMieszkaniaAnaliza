@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niezależna analiza mieszkań AI - Sprawdź funkcjonalność przed zakupem</title>
+    <meta name="description" content="Obiektywna analiza rzutów mieszkań przy pomocy AI. Sprawdź rzeczywistą funkcjonalność mieszkania zanim podpiszesz umowę. Niezależnie od deweloperów.">
+    <meta name="keywords" content="analiza mieszkania, rzut mieszkania AI, niezależna ocena mieszkania, deweloper, funkcjonalność mieszkania">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Niezależna analiza mieszkań AI">
+    <meta property="og:description" content="Sprawdź rzeczywistą funkcjonalność mieszkania zanim podpiszesz umowę">
+    <meta property="og:type" content="website">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-home-user"></i>
+                <span>MieszkaniaAI</span>
+            </div>
+            <div class="nav-links">
+                <a href="#jak-dziala">Jak to działa</a>
+                <a href="#cennik">Cennik</a>
+                <a href="#faq">FAQ</a>
+                <a href="#beta-form" class="cta-nav">BETA</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Niezależna analiza Twojego przyszłego mieszkania</h1>
+                    <p class="hero-subtitle">
+                        Sprawdź rzeczywistą funkcjonalność mieszkania zanim podpiszesz umowę. 
+                        Zweryfikuj mieszkanie niezależnie. Nasza AI analizuje mieszkania i daje praktyczne wskazówki.
+                    </p>
+                    <div class="hero-features">
+                        <div class="feature-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>100% niezależni</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-robot"></i>
+                            <span>Analiza AI</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Raport w 24h</span>
+                        </div>
+                    </div>
+                    <a href="#beta-form" class="btn-primary btn-large">
+                        Przetestuj za darmo - wersja BETA
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="hero-visual">
+                    <div class="mockup-container">
+                        <div class="floor-plan">
+                            <div class="room living-room">
+                                <span>Salon</span>
+                                <div class="ai-indicator good">
+                                    <i class="fas fa-check"></i>
+                                    <span>Dobra funkcjonalność</span>
+                                </div>
+                            </div>
+                            <div class="room bedroom">
+                                <span>Sypialnia</span>
+                                <div class="ai-indicator warning">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    <span>Brak miejsca na szafę</span>
+                                </div>
+                            </div>
+                            <div class="room kitchen">
+                                <span>Kuchnia</span>
+                                <div class="ai-indicator good">
+                                    <i class="fas fa-check"></i>
+                                    <span>Praktyczny układ</span>
+                                </div>
+                            </div>
+                            <div class="room bathroom">
+                                <span>Łazienka</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition -->
+    <section class="value-prop">
+        <div class="container">
+            <h2>Dlaczego warto sprawdzić mieszkanie przed zakupem?</h2>
+            <div class="problems-solutions">
+                <div class="problems">
+                    <h3>Typowe problemy:</h3>
+                    <div class="problem-item">
+                        <i class="fas fa-times"></i>
+                        <span>Deweloperzy pokazują tylko zalety</span>
+                    </div>
+                    <div class="problem-item">
+                        <i class="fas fa-times"></i>
+                        <span>Rzuty mogą być mylące i niepraktyczne</span>
+                    </div>
+                    <div class="problem-item">
+                        <i class="fas fa-times"></i>
+                        <span>Brak niezależnej opinii przed decyzją o zakupie</span>
+                    </div>
+                </div>
+                <div class="solution">
+                    <div class="solution-content">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>Nasze rozwiązanie</h3>
+                        <p>Obiektywna analiza AI bez konfliktów interesów</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works -->
+    <section id="jak-dziala" class="how-it-works">
+        <div class="container">
+            <h2>Jak to działa</h2>
+            <p class="section-subtitle">3 proste kroki do otrzymania obiektywnej analizy</p>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <i class="fas fa-upload"></i>
+                    </div>
+                    <h3>Wyślij rzut</h3>
+                    <p>Załącz plik PDF/JPG z rzutem mieszkania</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI analizuje</h3>
+                    <p>Sprawdzamy funkcjonalność, oświetlenie, przepływ</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Otrzymaj raport</h3>
+                    <p>Praktyczne wskazówki i potencjalne problemy</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What we analyze -->
+    <section class="analysis-features">
+        <div class="container">
+            <h2>Co analizujemy</h2>
+            <p class="section-subtitle">Nasze AI sprawdza kluczowe aspekty funkcjonalności mieszkania</p>
+            <div class="features-grid">
+                <div class="feature">
+                    <i class="fas fa-home"></i>
+                    <h3>Funkcjonalność przestrzeni</h3>
+                    <p>Czy układ jest praktyczny i wygodny w codziennym użytkowaniu</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-sun"></i>
+                    <h3>Nasłonecznienie</h3>
+                    <p>Orientacja względem stron świata i dostęp światła naturalnego</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-route"></i>
+                    <h3>Przepływ ruchu</h3>
+                    <p>Czy łatwo się poruszać po mieszkaniu bez kolizji</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-ruler-combined"></i>
+                    <h3>Proporcje pomieszczeń</h3>
+                    <p>Czy wymiary są realne i odpowiadają potrzebom</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-couch"></i>
+                    <h3>Możliwości aranżacji</h3>
+                    <p>Gdzie zmieścisz meble i jak urządzić wnętrze</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>Potencjalne problemy</h3>
+                    <p>Co może Cię zaskoczyć i na co zwrócić uwagę</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits">
+        <div class="container">
+            <h2>Dlaczego jesteśmy inni?</h2>
+            <div class="benefits-grid">
+                <div class="benefit">
+                    <i class="fas fa-shield-check"></i>
+                    <h3>100% niezależni</h3>
+                    <p>Nie mamy powiązań z deweloperami</p>
+                </div>
+                <div class="benefit">
+                    <i class="fas fa-robot"></i>
+                    <h3>Obiektywna AI</h3>
+                    <p>Bez subiektywnych opinii sprzedawców</p>
+                </div>
+                <div class="benefit">
+                    <i class="fas fa-piggy-bank"></i>
+                    <h3>Oszczędzasz</h3>
+                    <p>Unikniesz kosztownych błędów</p>
+                </div>
+                <div class="benefit">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <h3>Szybka analiza</h3>
+                    <p>Raport w 24h</p>
+                </div>
+                <div class="benefit">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Praktyczne wskazówki</h3>
+                    <p>Konkretne rady, nie ogólniki</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="cennik" class="pricing">
+        <div class="container">
+            <h2>Cennik</h2>
+            <p class="section-subtitle">Wybierz plan odpowiedni dla Twoich potrzeb</p>
+            <div class="pricing-cards">
+                <div class="pricing-card featured">
+                    <div class="card-header">
+                        <h3>Wersja BETA</h3>
+                        <div class="price">
+                            <span class="amount">20 zł</span>
+                        </div>
+                        <p class="price-note">Ograniczona ilość miejsc</p>
+                    </div>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> Podstawowa analiza funkcjonalności</li>
+                        <li><i class="fas fa-check"></i> Raport w PDF</li>
+                        <li><i class="fas fa-check"></i> Wskazówki dotyczące układu</li>
+                    </ul>
+                    <a href="#beta-form" class="btn-primary">Wybierz BETA</a>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="card-header">
+                        <h3>Plan Standard</h3>
+                        <div class="price">
+                            <span class="amount">99 zł</span>
+                        </div>
+                    </div>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> Wszystko z wersji BETA</li>
+                        <li><i class="fas fa-check"></i> Szczegółowa analiza nasłonecznienia</li>
+                        <li><i class="fas fa-check"></i> Porównanie z podobnymi mieszkaniami</li>
+                        <li><i class="fas fa-check"></i> Konsultacja telefoniczna (15 min)</li>
+                    </ul>
+                    <button class="btn-secondary" disabled>Wkrótce</button>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="card-header">
+                        <h3>Plan Premium</h3>
+                        <div class="price">
+                            <span class="amount">199 zł</span>
+                        </div>
+                    </div>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> Wszystko z planu Standard</li>
+                        <li><i class="fas fa-check"></i> Analiza możliwości aranżacji</li>
+                        <li><i class="fas fa-check"></i> Wykrywanie potencjalnych problemów</li>
+                        <li><i class="fas fa-check"></i> Rozszerzona konsultacja (30 min)</li>
+                        <li><i class="fas fa-check"></i> Wsparcie przy negocjacjach</li>
+                    </ul>
+                    <button class="btn-secondary" disabled>Wkrótce</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Form -->
+    <section id="beta-form" class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Sprawdź swoje mieszkanie za darmo!</h2>
+                <p>Dołącz do wersji BETA i otrzymaj pierwszą analizę w specjalnej cenie</p>
+                
+                <form id="betaForm" class="beta-form">
+                    <div class="form-group">
+                        <label for="fullName">Imię i nazwisko *</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Telefon (opcjonalne)</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    
+                    <div class="form-group file-upload">
+                        <label for="floorPlan">Rzut mieszkania (PDF/JPG/PNG) *</label>
+                        <div class="file-drop-zone" id="fileDropZone">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Przeciągnij plik tutaj lub kliknij aby wybrać</p>
+                            <input type="file" id="floorPlan" name="floorPlan" accept=".pdf,.jpg,.jpeg,.png" required>
+                        </div>
+                        <div id="filePreview" class="file-preview"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="additionalInfo">Dodatkowe informacje (opcjonalne)</label>
+                        <textarea id="additionalInfo" name="additionalInfo" rows="4" placeholder="Opisz swoje obawy lub pytania dotyczące mieszkania..."></textarea>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="dataConsent" name="dataConsent" required>
+                            <span class="checkmark"></span>
+                            Zgadzam się na przetwarzanie danych osobowych *
+                        </label>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <span class="checkmark"></span>
+                            Chcę otrzymywać newsletter z poradami o mieszkaniach
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary btn-large">
+                        <span class="btn-text">Wyślij do analizy - BETA</span>
+                        <span class="btn-loading">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            Wysyłanie...
+                        </span>
+                    </button>
+                </form>
+                
+                <div class="form-info">
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>Wyślemy Ci szczegółowy raport w ciągu 24-48h</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Twoje dane są bezpieczne - nie udostępniamy ich deweloperom</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-star"></i>
+                        <span>Jako uczestnik BETA otrzymasz dożywotni rabat 50% na przyszłe analizy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2>Często zadawane pytania</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Czy to legalne?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Tak, analiza publicznie dostępnych rzutów mieszkań jest całkowicie legalna. Nie naruszamy żadnych praw autorskich ani umów z deweloperami.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Jak długo trwa analiza?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Standardowa analiza trwa 24-48 godzin. W wersji BETA może to potrwać nieco dłużej ze względu na ręczną weryfikację wyników.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Co jeśli rzut jest nieczytelny?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Jeśli rzut będzie nieczytelny, skontaktujemy się z Tobą w celu przesłania lepszej jakości pliku lub zwrócimy pieniądze.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Czy analizujecie mieszkania używane?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Tak, analizujemy również mieszkania używane. Wystarczy rzut mieszkania lub szkic rozkładu pomieszczeń.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-home-user"></i>
+                    <span>MieszkaniaAI</span>
+                    <p>Niezależna analiza mieszkań z wykorzystaniem sztucznej inteligencji</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Nasze wartości</h4>
+                    <ul>
+                        <li>Niezależność</li>
+                        <li>Rzetelność</li>
+                        <li>Troska o klienta</li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Kontakt</h4>
+                    <p>Email: info@mieszkaniaai.pl</p>
+                    <p>Telefon: +48 123 456 789</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MieszkaniaAI. Wszystkie prawa zastrzeżone.</p>
+                <div class="footer-legal">
+                    <a href="#privacy">Polityka prywatności</a>
+                    <a href="#terms">Regulamin</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="fas fa-check-circle"></i>
+                <h3>Formularz wysłany pomyślnie!</h3>
+            </div>
+            <div class="modal-body">
+                <p>Dziękujemy za zgłoszenie do programu BETA. Analizę Twojego mieszkania otrzymasz w ciągu 24-48 godzin.</p>
+                <div class="timeline">
+                    <div class="timeline-item active">
+                        <i class="fas fa-check"></i>
+                        <span>Formularz wysłany</span>
+                    </div>
+                    <div class="timeline-item">
+                        <i class="fas fa-cog"></i>
+                        <span>Analiza AI w toku</span>
+                    </div>
+                    <div class="timeline-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>Raport wysłany</span>
+                    </div>
+                </div>
+            </div>
+            <button class="btn-primary" onclick="closeModal()">Zamknij</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
