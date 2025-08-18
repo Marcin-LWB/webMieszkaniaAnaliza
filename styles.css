@@ -1271,3 +1271,287 @@ html {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* Savings Examples Section */
+.savings-examples {
+    padding: 80px 0;
+    background: #faf9f8;
+}
+
+.savings-examples h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #323130;
+}
+
+.savings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+    margin-top: 48px;
+}
+
+.saving-item {
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.saving-item:hover {
+    transform: translateY(-5px);
+}
+
+.saving-icon {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, #0078d4 0%, #106ebe 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+}
+
+.saving-icon i {
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.saving-item h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #323130;
+    margin-bottom: 16px;
+}
+
+.saving-problem {
+    color: #605e5c;
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+.saving-cost {
+    color: #d13438;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.savings-disclaimer {
+    margin-top: 48px;
+    text-align: center;
+    color: #605e5c;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.savings-disclaimer i {
+    margin-right: 8px;
+    color: #0078d4;
+}
+
+/* Deliverables Section */
+.deliverables {
+    padding: 80px 0;
+    background: #ffffff;
+}
+
+.deliverables h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #323130;
+}
+
+.deliverables-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 32px;
+    margin-top: 48px;
+}
+
+.deliverable {
+    text-align: center;
+    padding: 32px 24px;
+    border: 1px solid #edebe9;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.deliverable:hover {
+    border-color: #0078d4;
+    transform: translateY(-5px);
+}
+
+.deliverable i {
+    font-size: 48px;
+    color: #0078d4;
+    margin-bottom: 24px;
+}
+
+.deliverable h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #323130;
+    margin-bottom: 16px;
+}
+
+.deliverable p {
+    color: #605e5c;
+    font-size: 14px;
+}
+
+/* Value Stacking */
+.value-stacking {
+    margin-top: 48px;
+    padding: 32px;
+    background: #f3f2f1;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.value-stacking h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #323130;
+    margin-bottom: 24px;
+}
+
+.value-items {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.value-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #edebe9;
+}
+
+.value-item:last-child {
+    border-bottom: none;
+}
+
+.item-name {
+    color: #605e5c;
+    font-size: 14px;
+}
+
+.item-price {
+    color: #323130;
+    font-weight: 500;
+}
+
+.value-total {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0 8px;
+    border-top: 2px solid #0078d4;
+    margin-top: 16px;
+    font-weight: 600;
+}
+
+.total-label {
+    color: #323130;
+}
+
+.total-price {
+    color: #d13438;
+    font-size: 18px;
+}
+
+.current-offer {
+    margin-top: 24px;
+}
+
+.offer-text {
+    font-size: 18px;
+    color: #0078d4;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.future-text {
+    color: #605e5c;
+    font-size: 14px;
+}
+
+/* Guarantee */
+.guarantee {
+    margin-top: 48px;
+    padding: 32px;
+    background: linear-gradient(135deg, #f3f2f1 0%, #ffffff 100%);
+    border-radius: 8px;
+    border: 1px solid #edebe9;
+}
+
+.guarantee-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.guarantee-content i {
+    font-size: 48px;
+    color: #0078d4;
+    flex-shrink: 0;
+}
+
+.guarantee-text h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #323130;
+    margin-bottom: 16px;
+}
+
+.guarantee-text p {
+    color: #605e5c;
+    margin-bottom: 8px;
+}
+
+.guarantee-how {
+    font-size: 14px;
+    font-style: italic;
+}
+
+/* Pricing Updates */
+.after-beta-note {
+    margin-top: 16px;
+    font-size: 12px;
+    color: #605e5c;
+    font-style: italic;
+}
+
+/* Mobile Responsiveness for New Sections */
+@media (max-width: 768px) {
+    .savings-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .deliverables-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .value-stacking {
+        padding: 24px;
+    }
+    
+    .guarantee-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .guarantee-content i {
+        align-self: center;
+    }
+}
