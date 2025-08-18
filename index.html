@@ -15,7 +15,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -24,6 +24,13 @@
             theme: {
                 extend: {
                     colors: {
+                        'gray-70': '#2e2f2f',
+                        'gray-80': '#202121',
+                        'gray-90': '#171818',
+                        'gray-100': '#121313',
+                        'accent': '#fedda4',
+                        'accent-dark': '#e6c492',
+                        'accent-darker': '#d4b280',
                         primary: '#0078d4',
                         'primary-dark': '#106ebe',
                         'primary-darker': '#005a9e',
@@ -32,6 +39,21 @@
                         'neutral-light': '#f3f2f1',
                         danger: '#d13438',
                         success: '#107c10'
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans"', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'border': '0 0 0 1px rgba(255,255,255,0.08)',
+                        'glow': '0 0 0 1px rgba(254,221,164,0.4), 0 2px 8px -2px rgba(254,221,164,0.35)',
+                        'accent': '0 0 0 1px rgba(254,221,164,0.3)'
+                    },
+                    spacing: {
+                        'section': 'clamp(4rem, 6vw, 6.5rem)',
+                        'section-sm': 'clamp(2.5rem, 4vw, 4rem)'
+                    },
+                    letterSpacing: {
+                        'tight-heading': '-0.02em'
                     }
                 }
             }
@@ -46,26 +68,26 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-sm border-b border-black/5 z-50 transition-all duration-300 h-14">
+    <nav class="fixed top-0 w-full bg-gray-90/95 backdrop-blur-sm border-b border-white/5 z-50 transition-all duration-300 h-14">
         <div class="max-w-6xl mx-auto px-6 flex justify-between items-center h-full">
-            <div class="flex items-center text-lg font-semibold text-primary">
+            <div class="flex items-center text-lg font-semibold text-accent">
                 <i class="fas fa-home-user mr-3 text-2xl"></i>
                 <span>MieszkanieSprawdzam</span>
             </div>
             <div class="flex gap-10 items-center">
-                <a href="#jak-dziala" class="text-neutral-rest text-sm font-normal py-4 relative transition-colors duration-200 hover:text-primary group">
+                <a href="#jak-dziala" class="text-white/70 text-sm font-normal py-4 relative transition-colors duration-200 hover:text-accent group">
                     Jak to działa
-                    <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-sm scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
+                    <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-accent rounded-sm scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
                 </a>
-                <a href="#cennik" class="text-neutral-rest text-sm font-normal py-4 relative transition-colors duration-200 hover:text-primary group">
+                <a href="#cennik" class="text-white/70 text-sm font-normal py-4 relative transition-colors duration-200 hover:text-accent group">
                     Cennik
-                    <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-sm scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
+                    <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-accent rounded-sm scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
                 </a>
-                <a href="#faq" class="text-neutral-rest text-sm font-normal py-4 relative transition-colors duration-200 hover:text-primary group">
+                <a href="#faq" class="text-white/70 text-sm font-normal py-4 relative transition-colors duration-200 hover:text-accent group">
                     FAQ
-                    <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-sm scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
+                    <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-accent rounded-sm scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
                 </a>
-                <a href="#beta-form" class="bg-gradient-to-br from-primary to-primary-dark text-white px-5 py-2 rounded font-medium border-none shadow-md shadow-primary/30 hover:from-primary-dark hover:to-primary-darker hover:-translate-y-px hover:shadow-lg hover:shadow-primary/40 transition-all duration-200">
+                <a href="#beta-form" class="btn-primary px-5 py-2 rounded font-medium border-none shadow-accent hover:-translate-y-px transition-all duration-200">
                     BETA
                 </a>
             </div>
@@ -73,33 +95,34 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="pt-32 pb-20 bg-gradient-to-br from-white via-gray-50 to-blue-50 min-h-[50vh] flex items-center relative overflow-hidden">
-        <div class="absolute inset-0 bg-cover bg-center opacity-40 blur-sm brightness-110 contrast-90 pointer-events-none" style="background-image: url('assets/mieszkanie01.png'); filter: blur(3px) brightness(1.1) contrast(0.9);"></div>
+    <section class="pt-32 pb-20 bg-gray-80 min-h-[50vh] flex items-center relative overflow-hidden hero-mask section-glow-1">
+        <div class="decor-grid absolute inset-0"></div>
+        <div class="absolute inset-0 bg-cover bg-center opacity-30 blur-sm brightness-110 contrast-90 pointer-events-none" style="background-image: url('assets/mieszkanie01.png'); filter: blur(3px) brightness(1.1) contrast(0.9);"></div>
         <div class="max-w-6xl mx-auto px-6 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                 <div class="relative z-10">
-                    <h1 class="text-5xl font-semibold leading-tight mb-6 text-neutral">
+                    <h1 class="text-5xl font-semibold leading-tight mb-6 text-white tracking-tight-heading">
                         Niezależna analiza Twojego przyszłego mieszkania
                     </h1>
-                    <p class="text-lg text-neutral-rest mb-10 leading-relaxed">
+                    <p class="text-lg text-white/80 mb-10 leading-relaxed">
                         Zanim kupisz, sprawdź, czy układ przejdzie naszą weryfikację. 
                         Wykrywamy ukryte kompromisy w funkcjonalności mieszkania. Raport z praktycznymi wskazówkami w 24–48 h.
                     </p>
                     <div class="flex gap-10 mb-12">
-                        <div class="flex items-center gap-3 text-primary font-medium text-sm">
+                        <div class="flex items-center gap-3 text-accent font-medium text-sm">
                             <i class="fas fa-shield-alt text-lg"></i>
                             <span>100% niezależni</span>
                         </div>
-                        <div class="flex items-center gap-3 text-primary font-medium text-sm">
+                        <div class="flex items-center gap-3 text-accent font-medium text-sm">
                             <i class="fas fa-robot text-lg"></i>
                             <span>Analiza AI</span>
                         </div>
-                        <div class="flex items-center gap-3 text-primary font-medium text-sm">
+                        <div class="flex items-center gap-3 text-accent font-medium text-sm">
                             <i class="fas fa-clock text-lg"></i>
                             <span>Raport w 24-48h</span>
                         </div>
                     </div>
-                    <a href="#beta-form" class="inline-flex items-center gap-3 bg-gradient-to-br from-primary to-primary-dark text-white px-10 py-4 rounded font-medium text-base border-none cursor-pointer transition-all duration-200 relative overflow-hidden min-h-12 shadow-md shadow-primary/30 hover:from-primary-dark hover:to-primary-darker hover:-translate-y-px hover:shadow-lg hover:shadow-primary/40">
+                    <a href="#beta-form" class="inline-flex items-center gap-3 btn-primary px-10 py-4 rounded font-medium text-base border-none cursor-pointer transition-all duration-200 relative overflow-hidden min-h-12">
                         Wyślij rzut i odbierz zniżkę w testach
                         <i class="fas fa-arrow-right"></i>
                     </a>
@@ -109,32 +132,32 @@
     </section>
 
     <!-- Value Proposition -->
-    <section class="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50">
+    <section class="py-section bg-gray-90 section-glow-2">
         <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-center text-3xl font-semibold mb-12 text-neutral">
+            <h2 class="text-center text-3xl font-semibold mb-12 title-gradient tracking-tight-heading">
                 Dlaczego warto sprawdzić mieszkanie przed zakupem?
             </h2>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                 <div>
-                    <h3 class="text-danger text-xl font-semibold mb-6">Typowe problemy:</h3>
+                    <h3 class="text-red-400 text-xl font-semibold mb-6">Typowe problemy:</h3>
                     <div class="space-y-4">
-                        <div class="flex items-center gap-4 p-5 bg-white/80 backdrop-blur-lg rounded-lg border-l-4 border-danger shadow-sm">
-                            <i class="fas fa-times text-danger text-lg"></i>
-                            <span class="text-neutral text-sm">Deweloperzy pokazują głównie zalety</span>
+                        <div class="flex items-center gap-4 p-5 card-dark rounded-lg border-l-4 border-red-400">
+                            <i class="fas fa-times text-red-400 text-lg"></i>
+                            <span class="text-white text-sm">Deweloperzy pokazują głównie zalety</span>
                         </div>
-                        <div class="flex items-center gap-4 p-5 bg-white/80 backdrop-blur-lg rounded-lg border-l-4 border-danger shadow-sm">
-                            <i class="fas fa-times text-danger text-lg"></i>
-                            <span class="text-neutral text-sm">Rzuty bywają mylące, niefunkcjonalne i niepraktyczne</span>
+                        <div class="flex items-center gap-4 p-5 card-dark rounded-lg border-l-4 border-red-400">
+                            <i class="fas fa-times text-red-400 text-lg"></i>
+                            <span class="text-white text-sm">Rzuty bywają mylące, niefunkcjonalne i niepraktyczne</span>
                         </div>
-                        <div class="flex items-center gap-4 p-5 bg-white/80 backdrop-blur-lg rounded-lg border-l-4 border-danger shadow-sm">
-                            <i class="fas fa-times text-danger text-lg"></i>
-                            <span class="text-neutral text-sm">Brakuje niezależnej opinii przed decyzją o zakupie</span>
+                        <div class="flex items-center gap-4 p-5 card-dark rounded-lg border-l-4 border-red-400">
+                            <i class="fas fa-times text-red-400 text-lg"></i>
+                            <span class="text-white text-sm">Brakuje niezależnej opinii przed decyzją o zakupie</span>
                         </div>
                     </div>
                 </div>
                 <div class="flex justify-center">
-                    <div class="text-center bg-gradient-to-br from-success to-green-700 text-white p-12 rounded-xl shadow-lg shadow-success/30">
-                        <i class="fas fa-lightbulb text-5xl mb-5 opacity-100"></i>
+                    <div class="text-center card-dark border-2 border-green-500 text-white p-12 rounded-xl shadow-[0_0_20px_rgba(34,197,94,0.4)]">
+                        <i class="fas fa-lightbulb text-5xl mb-5 opacity-100 text-green-400"></i>
                         <h3 class="text-2xl font-semibold mb-4">Nasze rozwiązanie</h3>
                         <p>Obiektywna analiza przy pomocy specjalnie wyszkolonej AI. Niezależna analiza bez konfliktu interesów</p>
                     </div>
@@ -144,34 +167,34 @@
     </section>
 
     <!-- What you can gain -->
-    <section class="py-20 bg-neutral-light">
+    <section class="py-section bg-gray-90 section-glow-3">
         <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-center text-3xl font-semibold mb-4 text-neutral">Co możesz zyskać</h2>
-            <p class="text-center text-neutral-rest text-lg mb-12">Przykłady oszczędności dzięki naszej analizie</p>
+            <h2 class="text-center text-3xl font-semibold mb-4 text-white tracking-tight-heading">Co możesz zyskać</h2>
+            <p class="text-center text-white/70 text-lg mb-12">Przykłady oszczędności dzięki naszej analizie</p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-lg shadow-sm text-center transition-transform duration-300 hover:-translate-y-2">
-                    <div class="w-16 h-16 bg-gradient-to-br from-primary to-primary-dark rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-lightbulb text-2xl text-white"></i>
+                <div class="card-dark p-8 rounded-lg text-center transition-transform duration-300 hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-lightbulb text-2xl text-gray-90"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-neutral mb-4">Zbyt ciemny salon</h3>
-                    <p class="text-neutral-rest mb-4 text-sm">Błąd orientacji względem stron świata</p>
-                    <p class="text-danger font-medium text-base">Dodatkowe oświetlenie / spadek wartości: <strong>5-15 tys. zł</strong></p>
+                    <h3 class="text-xl font-semibold text-white mb-4">Zbyt ciemny salon</h3>
+                    <p class="text-white/70 mb-4 text-sm">Błąd orientacji względem stron świata</p>
+                    <p class="text-red-400 font-medium text-base">Dodatkowe oświetlenie / spadek wartości: <strong>5-15 tys. zł</strong></p>
                 </div>
-                <div class="bg-white p-8 rounded-lg shadow-sm text-center transition-transform duration-300 hover:-translate-y-2">
-                    <div class="w-16 h-16 bg-gradient-to-br from-primary to-primary-dark rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-bed text-2xl text-white"></i>
+                <div class="card-dark p-8 rounded-lg text-center transition-transform duration-300 hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-bed text-2xl text-gray-90"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-neutral mb-4">Trudny układ sypialni</h3>
-                    <p class="text-neutral-rest mb-4 text-sm">Kolizje mebli w codziennym użytkowaniu</p>
-                    <p class="text-danger font-medium text-base">Przeróbki i adaptacje: <strong>4-9 tys. zł</strong></p>
+                    <h3 class="text-xl font-semibold text-white mb-4">Trudny układ sypialni</h3>
+                    <p class="text-white/70 mb-4 text-sm">Kolizje mebli w codziennym użytkowaniu</p>
+                    <p class="text-red-400 font-medium text-base">Przeróbki i adaptacje: <strong>4-9 tys. zł</strong></p>
                 </div>
-                <div class="bg-white p-8 rounded-lg shadow-sm text-center transition-transform duration-300 hover:-translate-y-2">
-                    <div class="w-16 h-16 bg-gradient-to-br from-primary to-primary-dark rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-arrows-alt text-2xl text-white"></i>
+                <div class="card-dark p-8 rounded-lg text-center transition-transform duration-300 hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-arrows-alt text-2xl text-gray-90"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-neutral mb-4">Zbyt długie korytarze</h3>
-                    <p class="text-neutral-rest mb-4 text-sm">Korytarze >15% powierzchni mieszkania</p>
-                    <p class="text-danger font-medium text-base">Mniej użytecznej przestrzeni - spadek wartości: <strong>1-3%</strong></p>
+                    <h3 class="text-xl font-semibold text-white mb-4">Zbyt długie korytarze</h3>
+                    <p class="text-white/70 mb-4 text-sm">Korytarze >15% powierzchni mieszkania</p>
+                    <p class="text-red-400 font-medium text-base">Mniej użytecznej przestrzeni - spadek wartości: <strong>1-3%</strong></p>
                 </div>
             </div>
             <p class="text-center text-neutral-rest text-sm italic mt-12">
@@ -184,7 +207,7 @@
     <!-- How it works -->
     <section id="jak-dziala" class="py-20 bg-gradient-to-br from-white via-neutral-light to-gray-50">
         <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-center text-3xl font-semibold mb-4 text-neutral">Jak to działa</h2>
+            <h2 class="text-center text-3xl font-semibold mb-4 text-neutral tracking-tight-heading">Jak to działa</h2>
             <p class="text-center text-neutral-rest text-lg mb-12">3 proste kroki do otrzymania obiektywnej analizy</p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-12">
                 <div class="text-center relative">

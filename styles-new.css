@@ -4,7 +4,13 @@
 
 @layer base {
     body {
-        font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        font-family: 'Noto Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        background-color: #171818;
+        color: white;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        letter-spacing: -0.02em;
     }
 }
 
@@ -41,20 +47,171 @@
     animation: fadeInUp 0.6s ease-out;
 }
 
+/* Dekoracyjna siatka w tle */
+.decor-grid {
+    background: repeating-linear-gradient(
+        to right,
+        rgba(255,255,255,0.06) 0 1px,
+        transparent 1px 140px
+    );
+    mask: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+    opacity: 0.35;
+    pointer-events: none;
+}
+
+/* Hero mask overlay */
+.hero-mask::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.4));
+    mix-blend-mode: normal;
+    z-index: 1;
+}
+
+.hero-mask:hover::before {
+    opacity: 1;
+}
+
+/* Subtle radial gradients for sections */
+.section-glow-1 {
+    position: relative;
+}
+
+.section-glow-1::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: transparent;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.section-glow-2 {
+    position: relative;
+}
+
+.section-glow-2::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+        radial-gradient(circle at 50% 30%, rgba(34,197,94,0.08) 0%, rgba(34,197,94,0.04) 25%, rgba(34,197,94,0.01) 50%, transparent 70%),
+        radial-gradient(circle at 110% 70%, rgba(254,221,164,0.12) 0%, rgba(254,221,164,0.06) 20%, rgba(254,221,164,0.02) 45%, transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.section-glow-3 {
+    position: relative;
+}
+
+.section-glow-3::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+        radial-gradient(circle at 60% 25%, rgba(254,221,164,0.10) 0%, rgba(254,221,164,0.06) 15%, rgba(254,221,164,0.03) 35%, transparent 60%),
+        radial-gradient(circle at 115% 80%, rgba(239,68,68,0.06) 0%, rgba(239,68,68,0.03) 20%, rgba(239,68,68,0.01) 40%, transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Text utilities */
+.text-muted {
+    color: #949698;
+}
+
+/* Button styles */
+.btn-primary {
+    background-color: #fedda4;
+    color: #171818;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #e6c492;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    border: 1px solid #fedda4;
+    color: #fedda4;
+    background: transparent;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(254, 221, 164, 0.1);
+}
+
+.btn-ghost {
+    color: #fedda4;
+    background: transparent;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn-ghost:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Card styles */
+.card-dark {
+    background-color: #202121;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.2s ease;
+}
+
+.card-dark:hover {
+    box-shadow: 0 0 0 1px rgba(254, 221, 164, 0.4), 0 2px 8px -2px rgba(254, 221, 164, 0.35);
+    transform: translateY(-2px);
+}
+
 /* Custom scrollbar for webkit browsers */
 ::-webkit-scrollbar {
     width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: #202121;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #888;
+    background: #2e2f2f;
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: #fedda4;
+}
+
+/* Ensure content is above gradient overlays */
+.section-glow-1 > *,
+.section-glow-2 > *,
+.section-glow-3 > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Force dark navigation background */
+nav {
+    background-color: rgba(23, 24, 24, 0.95) !important;
+    backdrop-filter: blur(8px);
+}
+
+/* Special gradient for main section title */
+.title-gradient {
+    background: linear-gradient(135deg, 
+        rgba(254,221,164,1) 0%, 
+        rgba(254,221,164,0.9) 25%, 
+        rgba(255,255,255,0.95) 50%, 
+        rgba(254,221,164,0.9) 75%, 
+        rgba(254,221,164,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
