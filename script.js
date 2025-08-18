@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
-                const navHeight = document.querySelector('.navbar').offsetHeight;
+                const nav = document.querySelector('nav');
+                const navHeight = nav.offsetHeight;
                 const targetPosition = target.offsetTop - navHeight - 20;
                 
                 window.scrollTo({
@@ -19,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Navbar scroll effect
-    const navbar = document.querySelector('.navbar');
+    const navbar = document.querySelector('nav');
     window.addEventListener('scroll', function() {
         if (window.scrollY > 50) {
             navbar.style.background = 'rgba(255, 255, 255, 0.98)';
@@ -30,22 +31,32 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // FAQ accordion functionality
-    const faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        question.addEventListener('click', function() {
-            // Close other open items
-            faqItems.forEach(otherItem => {
-                if (otherItem !== item && otherItem.classList.contains('active')) {
-                    otherItem.classList.remove('active');
+    // FAQ accordion functionality - updated for new structure
+    window.toggleFaq = function(element) {
+        const answer = element.nextElementSibling;
+        const icon = element.querySelector('i');
+        
+        // Close other open FAQs
+        document.querySelectorAll('#faq .bg-white').forEach(faqItem => {
+            const otherAnswer = faqItem.querySelector('.hidden');
+            const otherIcon = faqItem.querySelector('i.fa-chevron-down');
+            if (otherAnswer && otherAnswer !== answer && !otherAnswer.classList.contains('hidden')) {
+                otherAnswer.classList.add('hidden');
+                if (otherIcon) {
+                    otherIcon.style.transform = 'rotate(0deg)';
                 }
-            });
-            
-            // Toggle current item
-            item.classList.toggle('active');
+            }
         });
-    });
+        
+        // Toggle current FAQ
+        if (answer.classList.contains('hidden')) {
+            answer.classList.remove('hidden');
+            icon.style.transform = 'rotate(180deg)';
+        } else {
+            answer.classList.add('hidden');
+            icon.style.transform = 'rotate(0deg)';
+        }
+    };
 
     // Form handling
     const betaForm = document.getElementById('betaForm');
@@ -72,11 +83,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function highlight() {
-        fileDropZone.classList.add('dragover');
+        fileDropZone.classList.add('border-primary', 'bg-primary/5');
+        fileDropZone.classList.remove('border-gray-300');
     }
 
     function unhighlight() {
-        fileDropZone.classList.remove('dragover');
+        fileDropZone.classList.remove('border-primary', 'bg-primary/5');
+        fileDropZone.classList.add('border-gray-300');
     }
 
     fileDropZone.addEventListener('drop', handleDrop, false);
@@ -89,6 +102,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     fileInput.addEventListener('change', function(e) {
         handleFiles(e.target.files);
+    });
+
+    // Make file drop zone clickable
+    fileDropZone.addEventListener('click', function() {
+        fileInput.click();
     });
 
     function handleFiles(files) {
@@ -107,16 +125,16 @@ document.addEventListener('DOMContentLoaded', function() {
         const fileSize = (file.size / 1024 / 1024).toFixed(2);
         
         filePreview.innerHTML = `
-            <div style="display: flex; align-items: center; gap: 1rem;">
-                <i class="fas fa-file-alt" style="color: #2563eb; font-size: 1.5rem;"></i>
-                <div>
-                    <div style="font-weight: 600; color: #1e293b;">${fileName}</div>
-                    <div style="color: #64748b; font-size: 0.9rem;">${fileSize} MB</div>
+            <div class="flex items-center gap-4">
+                <i class="fas fa-file-alt text-2xl text-primary"></i>
+                <div class="flex-1">
+                    <div class="font-semibold text-neutral">${fileName}</div>
+                    <div class="text-sm text-neutral-rest">${fileSize} MB</div>
                 </div>
-                <i class="fas fa-check-circle" style="color: #10b981; font-size: 1.2rem; margin-left: auto;"></i>
+                <i class="fas fa-check-circle text-xl text-success"></i>
             </div>
         `;
-        filePreview.classList.add('show');
+        filePreview.classList.remove('hidden');
     }
 
     // Form submission
@@ -130,12 +148,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Show loading state
         const submitBtn = betaForm.querySelector('button[type="submit"]');
-        submitBtn.classList.add('loading');
+        const btnText = submitBtn.querySelector('.btn-text');
+        const btnLoading = submitBtn.querySelector('.btn-loading');
+        
+        btnText.classList.add('hidden');
+        btnLoading.classList.remove('hidden');
         submitBtn.disabled = true;
 
         // Simulate form submission
         setTimeout(() => {
-            submitBtn.classList.remove('loading');
+            btnText.classList.remove('hidden');
+            btnLoading.classList.add('hidden');
             submitBtn.disabled = false;
             
             // Show success modal
@@ -143,7 +166,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Reset form
             betaForm.reset();
-            filePreview.classList.remove('show');
+            filePreview.classList.add('hidden');
             filePreview.innerHTML = '';
         }, 2000);
     });
@@ -200,30 +223,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Modal functionality
     window.showSuccessModal = function() {
         const modal = document.getElementById('successModal');
-        modal.classList.add('show');
-        
-        // Animate timeline
-        setTimeout(() => {
-            const timelineItems = modal.querySelectorAll('.timeline-item');
-            timelineItems[1].classList.add('active');
-            
-            setTimeout(() => {
-                timelineItems[2].classList.add('active');
-            }, 1000);
-        }, 500);
+        modal.classList.remove('hidden');
     };
 
     window.closeModal = function() {
         const modal = document.getElementById('successModal');
-        modal.classList.remove('show');
-        
-        // Reset timeline
-        const timelineItems = modal.querySelectorAll('.timeline-item');
-        timelineItems.forEach((item, index) => {
-            if (index > 0) {
-                item.classList.remove('active');
-            }
-        });
+        modal.classList.add('hidden');
     };
 
     // Close modal on outside click
@@ -248,8 +253,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
 
     // Observe elements for scroll animations
-    document.querySelectorAll('.step, .feature, .benefit, .pricing-card').forEach(el => {
-        el.classList.add('scroll-animate');
+    document.querySelectorAll('.transition-transform').forEach(el => {
         observer.observe(el);
     });
 
@@ -274,7 +278,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Track form interactions
     betaForm.addEventListener('submit', () => trackEvent('Form', 'Submit', 'Beta Registration'));
     
-    document.querySelectorAll('.btn-primary').forEach(btn => {
+    document.querySelectorAll('a[href="#beta-form"], button[type="submit"]').forEach(btn => {
         btn.addEventListener('click', function() {
             const text = this.textContent.trim();
             trackEvent('Button', 'Click', text);
@@ -297,11 +301,11 @@ document.addEventListener('DOMContentLoaded', function() {
     images.forEach(img => imageObserver.observe(img));
 
     // Add loading states to navigation
-    document.querySelectorAll('.nav-links a').forEach(link => {
+    document.querySelectorAll('nav a[href^="#"]').forEach(link => {
         link.addEventListener('click', function() {
             // Add active state
-            document.querySelectorAll('.nav-links a').forEach(l => l.classList.remove('active'));
-            this.classList.add('active');
+            document.querySelectorAll('nav a[href^="#"]').forEach(l => l.classList.remove('text-primary'));
+            this.classList.add('text-primary');
         });
     });
 
@@ -319,15 +323,19 @@ document.addEventListener('DOMContentLoaded', function() {
         this.setCustomValidity('');
     });
 
-    // Add tooltips for features
-    const features = document.querySelectorAll('.feature, .benefit');
+    // Add tooltips for features (Tailwind hover effects are already applied)
+    const features = document.querySelectorAll('.transition-transform');
     features.forEach(feature => {
         feature.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-5px) scale(1.02)';
+            if (!this.classList.contains('hover:-translate-y-2')) {
+                this.style.transform = 'translateY(-5px) scale(1.02)';
+            }
         });
         
         feature.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
+            if (!this.classList.contains('hover:-translate-y-2')) {
+                this.style.transform = 'translateY(0) scale(1)';
+            }
         });
     });
 

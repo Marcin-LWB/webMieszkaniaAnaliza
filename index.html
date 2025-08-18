@@ -17,88 +17,125 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0078d4',
+                        'primary-dark': '#106ebe',
+                        'primary-darker': '#005a9e',
+                        neutral: '#323130',
+                        'neutral-rest': '#605e5c',
+                        'neutral-light': '#f3f2f1',
+                        danger: '#d13438',
+                        success: '#107c10'
+                    }
+                }
+            }
+        }
+    </script>
+    
     <!-- CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-new.css">
     
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">
-                <i class="fas fa-home-user"></i>
+    <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-sm border-b border-black/5 z-50 transition-all duration-300 h-14">
+        <div class="max-w-6xl mx-auto px-6 flex justify-between items-center h-full">
+            <div class="flex items-center text-lg font-semibold text-primary">
+                <i class="fas fa-home-user mr-3 text-2xl"></i>
                 <span>MieszkanieSprawdzam</span>
             </div>
-            <div class="nav-links">
-                <a href="#jak-dziala">Jak to działa</a>
-                <a href="#cennik">Cennik</a>
-                <a href="#faq">FAQ</a>
-                <a href="#beta-form" class="cta-nav">BETA</a>
+            <div class="flex gap-10 items-center">
+                <a href="#jak-dziala" class="text-neutral-rest text-sm font-normal py-4 relative transition-colors duration-200 hover:text-primary group">
+                    Jak to działa
+                    <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-sm scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
+                </a>
+                <a href="#cennik" class="text-neutral-rest text-sm font-normal py-4 relative transition-colors duration-200 hover:text-primary group">
+                    Cennik
+                    <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-sm scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
+                </a>
+                <a href="#faq" class="text-neutral-rest text-sm font-normal py-4 relative transition-colors duration-200 hover:text-primary group">
+                    FAQ
+                    <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-sm scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
+                </a>
+                <a href="#beta-form" class="bg-gradient-to-br from-primary to-primary-dark text-white px-5 py-2 rounded font-medium border-none shadow-md shadow-primary/30 hover:from-primary-dark hover:to-primary-darker hover:-translate-y-px hover:shadow-lg hover:shadow-primary/40 transition-all duration-200">
+                    BETA
+                </a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Niezależna analiza Twojego przyszłego mieszkania</h1>
-                    <p class="hero-subtitle">
+    <section class="pt-32 pb-20 bg-gradient-to-br from-white via-gray-50 to-blue-50 min-h-[50vh] flex items-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center opacity-40 blur-sm brightness-110 contrast-90 pointer-events-none" style="background-image: url('assets/mieszkanie01.png'); filter: blur(3px) brightness(1.1) contrast(0.9);"></div>
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div class="relative z-10">
+                    <h1 class="text-5xl font-semibold leading-tight mb-6 text-neutral">
+                        Niezależna analiza Twojego przyszłego mieszkania
+                    </h1>
+                    <p class="text-lg text-neutral-rest mb-10 leading-relaxed">
                         Zanim kupisz, sprawdź, czy układ przejdzie naszą weryfikację. 
                         Wykrywamy ukryte kompromisy w funkcjonalności mieszkania. Raport z praktycznymi wskazówkami w 24–48 h.
                     </p>
-                    <div class="hero-features">
-                        <div class="feature-item">
-                            <i class="fas fa-shield-alt"></i>
+                    <div class="flex gap-10 mb-12">
+                        <div class="flex items-center gap-3 text-primary font-medium text-sm">
+                            <i class="fas fa-shield-alt text-lg"></i>
                             <span>100% niezależni</span>
                         </div>
-                        <div class="feature-item">
-                            <i class="fas fa-robot"></i>
+                        <div class="flex items-center gap-3 text-primary font-medium text-sm">
+                            <i class="fas fa-robot text-lg"></i>
                             <span>Analiza AI</span>
                         </div>
-                        <div class="feature-item">
-                            <i class="fas fa-clock"></i>
+                        <div class="flex items-center gap-3 text-primary font-medium text-sm">
+                            <i class="fas fa-clock text-lg"></i>
                             <span>Raport w 24-48h</span>
                         </div>
                     </div>
-                    <a href="#beta-form" class="btn-primary btn-large">
+                    <a href="#beta-form" class="inline-flex items-center gap-3 bg-gradient-to-br from-primary to-primary-dark text-white px-10 py-4 rounded font-medium text-base border-none cursor-pointer transition-all duration-200 relative overflow-hidden min-h-12 shadow-md shadow-primary/30 hover:from-primary-dark hover:to-primary-darker hover:-translate-y-px hover:shadow-lg hover:shadow-primary/40">
                         Wyślij rzut i odbierz zniżkę w testach
                         <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
-
             </div>
         </div>
     </section>
 
     <!-- Value Proposition -->
-    <section class="value-prop">
-        <div class="container">
-            <h2>Dlaczego warto sprawdzić mieszkanie przed zakupem?</h2>
-            <div class="problems-solutions">
-                <div class="problems">
-                    <h3>Typowe problemy:</h3>
-                    <div class="problem-item">
-                        <i class="fas fa-times"></i>
-                        <span>Deweloperzy pokazują głównie zalety</span>
-                    </div>
-                    <div class="problem-item">
-                        <i class="fas fa-times"></i>
-                        <span>Rzuty bywają mylące, niefunkcjonalne i niepraktyczne</span>
-                    </div>
-                    <div class="problem-item">
-                        <i class="fas fa-times"></i>
-                        <span>Brakuje niezależnej opinii przed decyzją o zakupie</span>
+    <section class="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-center text-3xl font-semibold mb-12 text-neutral">
+                Dlaczego warto sprawdzić mieszkanie przed zakupem?
+            </h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div>
+                    <h3 class="text-danger text-xl font-semibold mb-6">Typowe problemy:</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 p-5 bg-white/80 backdrop-blur-lg rounded-lg border-l-4 border-danger shadow-sm">
+                            <i class="fas fa-times text-danger text-lg"></i>
+                            <span class="text-neutral text-sm">Deweloperzy pokazują głównie zalety</span>
+                        </div>
+                        <div class="flex items-center gap-4 p-5 bg-white/80 backdrop-blur-lg rounded-lg border-l-4 border-danger shadow-sm">
+                            <i class="fas fa-times text-danger text-lg"></i>
+                            <span class="text-neutral text-sm">Rzuty bywają mylące, niefunkcjonalne i niepraktyczne</span>
+                        </div>
+                        <div class="flex items-center gap-4 p-5 bg-white/80 backdrop-blur-lg rounded-lg border-l-4 border-danger shadow-sm">
+                            <i class="fas fa-times text-danger text-lg"></i>
+                            <span class="text-neutral text-sm">Brakuje niezależnej opinii przed decyzją o zakupie</span>
+                        </div>
                     </div>
                 </div>
-                <div class="solution">
-                    <div class="solution-content">
-                        <i class="fas fa-lightbulb"></i>
-                        <h3>Nasze rozwiązanie</h3>
+                <div class="flex justify-center">
+                    <div class="text-center bg-gradient-to-br from-success to-green-700 text-white p-12 rounded-xl shadow-lg shadow-success/30">
+                        <i class="fas fa-lightbulb text-5xl mb-5 opacity-100"></i>
+                        <h3 class="text-2xl font-semibold mb-4">Nasze rozwiązanie</h3>
                         <p>Obiektywna analiza przy pomocy specjalnie wyszkolonej AI. Niezależna analiza bez konfliktu interesów</p>
                     </div>
                 </div>
@@ -107,251 +144,287 @@
     </section>
 
     <!-- What you can gain -->
-    <section class="savings-examples">
-        <div class="container">
-            <h2>Co możesz zyskać</h2>
-            <p class="section-subtitle">Przykłady oszczędności dzięki naszej analizie</p>
-            <div class="savings-grid">
-                <div class="saving-item">
-                    <div class="saving-icon">
-                        <i class="fas fa-lightbulb"></i>
+    <section class="py-20 bg-neutral-light">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-center text-3xl font-semibold mb-4 text-neutral">Co możesz zyskać</h2>
+            <p class="text-center text-neutral-rest text-lg mb-12">Przykłady oszczędności dzięki naszej analizie</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-sm text-center transition-transform duration-300 hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-gradient-to-br from-primary to-primary-dark rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-lightbulb text-2xl text-white"></i>
                     </div>
-                    <h3>Zbyt ciemny salon</h3>
-                    <p class="saving-problem">Błąd orientacji względem stron świata</p>
-                    <p class="saving-cost">Dodatkowe oświetlenie / spadek wartości: <strong>5-15 tys. zł</strong></p>
+                    <h3 class="text-xl font-semibold text-neutral mb-4">Zbyt ciemny salon</h3>
+                    <p class="text-neutral-rest mb-4 text-sm">Błąd orientacji względem stron świata</p>
+                    <p class="text-danger font-medium text-base">Dodatkowe oświetlenie / spadek wartości: <strong>5-15 tys. zł</strong></p>
                 </div>
-                <div class="saving-item">
-                    <div class="saving-icon">
-                        <i class="fas fa-bed"></i>
+                <div class="bg-white p-8 rounded-lg shadow-sm text-center transition-transform duration-300 hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-gradient-to-br from-primary to-primary-dark rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-bed text-2xl text-white"></i>
                     </div>
-                    <h3>Trudny układ sypialni</h3>
-                    <p class="saving-problem">Kolizje mebli w codziennym użytkowaniu</p>
-                    <p class="saving-cost">Przeróbki i adaptacje: <strong>4-9 tys. zł</strong></p>
+                    <h3 class="text-xl font-semibold text-neutral mb-4">Trudny układ sypialni</h3>
+                    <p class="text-neutral-rest mb-4 text-sm">Kolizje mebli w codziennym użytkowaniu</p>
+                    <p class="text-danger font-medium text-base">Przeróbki i adaptacje: <strong>4-9 tys. zł</strong></p>
                 </div>
-                <div class="saving-item">
-                    <div class="saving-icon">
-                        <i class="fas fa-arrows-alt"></i>
+                <div class="bg-white p-8 rounded-lg shadow-sm text-center transition-transform duration-300 hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-gradient-to-br from-primary to-primary-dark rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-arrows-alt text-2xl text-white"></i>
                     </div>
-                    <h3>Zbyt długie korytarze</h3>
-                    <p class="saving-problem">Korytarze >15% powierzchni mieszkania</p>
-                    <p class="saving-cost">Mniej użytecznej przestrzeni - spadek wartości: <strong>1-3%</strong></p>
+                    <h3 class="text-xl font-semibold text-neutral mb-4">Zbyt długie korytarze</h3>
+                    <p class="text-neutral-rest mb-4 text-sm">Korytarze >15% powierzchni mieszkania</p>
+                    <p class="text-danger font-medium text-base">Mniej użytecznej przestrzeni - spadek wartości: <strong>1-3%</strong></p>
                 </div>
             </div>
-            <p class="savings-disclaimer">
-                <i class="fas fa-info-circle"></i>
+            <p class="text-center text-neutral-rest text-sm italic mt-12">
+                <i class="fas fa-info-circle mr-2 text-primary"></i>
                 Przykładowe widełki; faktyczne kwoty zależą od standardu i cen rynkowych.
             </p>
         </div>
     </section>
 
     <!-- How it works -->
-    <section id="jak-dziala" class="how-it-works">
-        <div class="container">
-            <h2>Jak to działa</h2>
-            <p class="section-subtitle">3 proste kroki do otrzymania obiektywnej analizy</p>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div class="step-icon">
-                        <i class="fas fa-upload"></i>
+    <section id="jak-dziala" class="py-20 bg-gradient-to-br from-white via-neutral-light to-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-center text-3xl font-semibold mb-4 text-neutral">Jak to działa</h2>
+            <p class="text-center text-neutral-rest text-lg mb-12">3 proste kroki do otrzymania obiektywnej analizy</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-12">
+                <div class="text-center relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 w-9 h-9 bg-gradient-to-br from-primary to-primary-dark text-white rounded-full flex items-center justify-center font-semibold text-sm z-10 shadow-md shadow-primary/30">
+                        1
                     </div>
-                    <h3>Wyślij rzut</h3>
-                    <p>Załącz plik PDF/JPG/PNG - drag & drop lub formularz</p>
+                    <div class="bg-white/80 backdrop-blur-lg w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md border-2 border-primary/10">
+                        <i class="fas fa-upload text-4xl text-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-4 text-neutral">Wyślij rzut</h3>
+                    <p class="text-neutral-rest leading-relaxed text-sm">Załącz plik PDF/JPG/PNG - drag & drop lub formularz</p>
                 </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-icon">
-                        <i class="fas fa-brain"></i>
+                <div class="text-center relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 w-9 h-9 bg-gradient-to-br from-primary to-primary-dark text-white rounded-full flex items-center justify-center font-semibold text-sm z-10 shadow-md shadow-primary/30">
+                        2
                     </div>
-                    <h3>AI analizuje</h3>
-                    <p>Sprawdzamy układ, nasłonecznienie, przepływ i proporcje</p>
+                    <div class="bg-white/80 backdrop-blur-lg w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md border-2 border-primary/10">
+                        <i class="fas fa-brain text-4xl text-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-4 text-neutral">AI analizuje</h3>
+                    <p class="text-neutral-rest leading-relaxed text-sm">Sprawdzamy układ, nasłonecznienie, przepływ i proporcje</p>
                 </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-icon">
-                        <i class="fas fa-file-alt"></i>
+                <div class="text-center relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 w-9 h-9 bg-gradient-to-br from-primary to-primary-dark text-white rounded-full flex items-center justify-center font-semibold text-sm z-10 shadow-md shadow-primary/30">
+                        3
                     </div>
-                    <h3>Otrzymasz raport</h3>
-                    <p>Konkretne rekomendacje w 24-48 h</p>
+                    <div class="bg-white/80 backdrop-blur-lg w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md border-2 border-primary/10">
+                        <i class="fas fa-file-alt text-4xl text-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-4 text-neutral">Otrzymasz raport</h3>
+                    <p class="text-neutral-rest leading-relaxed text-sm">Konkretne rekomendacje w 24-48 h</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- What we analyze -->
-    <section class="analysis-features">
-        <div class="container">
-            <h2>Co analizujemy</h2>
-            <p class="section-subtitle">Nasze AI sprawdza kluczowe aspekty funkcjonalności mieszkania</p>
-            <div class="features-grid">
-                <div class="feature">
-                    <i class="fas fa-home"></i>
-                    <h3>Funkcjonalność</h3>
-                    <p>Czy układ jest praktyczny i logiczny w codziennym użytkowaniu</p>
+    <section class="py-20 bg-gradient-to-br from-blue-50 via-neutral-light to-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-center text-3xl font-semibold mb-4 text-neutral">Co analizujemy</h2>
+            <p class="text-center text-neutral-rest text-lg mb-12">Nasze AI sprawdza kluczowe aspekty funkcjonalności mieszkania</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+                <div class="bg-white/80 backdrop-blur-lg p-8 rounded-xl shadow-md border border-primary/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-primary/20">
+                    <i class="fas fa-home text-4xl text-primary mb-5"></i>
+                    <h3 class="text-lg font-semibold mb-4 text-neutral">Funkcjonalność</h3>
+                    <p class="text-neutral-rest leading-relaxed text-sm">Czy układ jest praktyczny i logiczny w codziennym użytkowaniu</p>
                 </div>
-                <div class="feature">
-                    <i class="fas fa-route"></i>
-                    <h3>Przepływ ruchu</h3>
-                    <p>Ile metrów jest "kradzionych" przez błędy rzutów</p>
+                <div class="bg-white/80 backdrop-blur-lg p-8 rounded-xl shadow-md border border-primary/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-primary/20">
+                    <i class="fas fa-route text-4xl text-primary mb-5"></i>
+                    <h3 class="text-lg font-semibold mb-4 text-neutral">Przepływ ruchu</h3>
+                    <p class="text-neutral-rest leading-relaxed text-sm">Ile metrów jest "kradzionych" przez błędy rzutów</p>
                 </div>
-                <div class="feature">
-                    <i class="fas fa-ruler-combined"></i>
-                    <h3>Proporcje</h3>
-                    <p>Realność wymiarów i ergonomia pomieszczeń</p>
+                <div class="bg-white/80 backdrop-blur-lg p-8 rounded-xl shadow-md border border-primary/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-primary/20">
+                    <i class="fas fa-ruler-combined text-4xl text-primary mb-5"></i>
+                    <h3 class="text-lg font-semibold mb-4 text-neutral">Proporcje</h3>
+                    <p class="text-neutral-rest leading-relaxed text-sm">Realność wymiarów i ergonomia pomieszczeń</p>
                 </div>
-                <div class="feature">
-                    <i class="fas fa-couch"></i>
-                    <h3>Aranżacja</h3>
-                    <p>Ustawność mebli i kolizje w przestrzeni</p>
+                <div class="bg-white/80 backdrop-blur-lg p-8 rounded-xl shadow-md border border-primary/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-primary/20">
+                    <i class="fas fa-couch text-4xl text-primary mb-5"></i>
+                    <h3 class="text-lg font-semibold mb-4 text-neutral">Aranżacja</h3>
+                    <p class="text-neutral-rest leading-relaxed text-sm">Ustawność mebli i kolizje w przestrzeni</p>
                 </div>
-                <div class="feature">
-                    <i class="fas fa-exclamation-triangle"></i>
-                    <h3>Ryzyka</h3>
-                    <p>Typowe pułapki i ukryte koszty</p>
+                <div class="bg-white/80 backdrop-blur-lg p-8 rounded-xl shadow-md border border-primary/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-primary/20">
+                    <i class="fas fa-exclamation-triangle text-4xl text-primary mb-5"></i>
+                    <h3 class="text-lg font-semibold mb-4 text-neutral">Ryzyka</h3>
+                    <p class="text-neutral-rest leading-relaxed text-sm">Typowe pułapki i ukryte koszty</p>
                 </div>
             </div>
         </div>
     </section>
 
-    
     <!-- Benefits -->
-    <section class="benefits">
-        <div class="container">
-            <h2>Dlaczego jesteśmy inni?</h2>
-            <div class="benefits-grid">
-                <div class="benefit">
-                    <i class="fas fa-shield-check"></i>
-                    <h3>100% niezależni</h3>
-                    <p>Brak powiązań z deweloperami</p>
+    <section class="py-20 bg-gradient-to-br from-white via-gray-50 to-blue-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-center text-3xl font-semibold mb-12 text-neutral">Dlaczego jesteśmy inni?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center bg-white/80 backdrop-blur-lg p-8 rounded-xl shadow-md transition-all duration-300 border border-success/10 hover:-translate-y-1 hover:shadow-lg hover:border-success/20">
+                    <i class="fas fa-shield-check text-4xl text-success mb-5"></i>
+                    <h3 class="text-base font-semibold mb-3 text-neutral">100% niezależni</h3>
+                    <p class="text-neutral-rest text-sm leading-relaxed">Brak powiązań z deweloperami</p>
                 </div>
-                <div class="benefit">
-                    <i class="fas fa-robot"></i>
-                    <h3>Obiektywna AI</h3>
-                    <p>Zero "sprzedażowych" opinii</p>
+                <div class="text-center bg-white/80 backdrop-blur-lg p-8 rounded-xl shadow-md transition-all duration-300 border border-success/10 hover:-translate-y-1 hover:shadow-lg hover:border-success/20">
+                    <i class="fas fa-robot text-4xl text-success mb-5"></i>
+                    <h3 class="text-base font-semibold mb-3 text-neutral">Obiektywna AI</h3>
+                    <p class="text-neutral-rest text-sm leading-relaxed">Zero "sprzedażowych" opinii</p>
                 </div>
-                <div class="benefit">
-                    <i class="fas fa-tachometer-alt"></i>
-                    <h3>Szybko</h3>
-                    <p>Raport w 24-48 h</p>
+                <div class="text-center bg-white/80 backdrop-blur-lg p-8 rounded-xl shadow-md transition-all duration-300 border border-success/10 hover:-translate-y-1 hover:shadow-lg hover:border-success/20">
+                    <i class="fas fa-tachometer-alt text-4xl text-success mb-5"></i>
+                    <h3 class="text-base font-semibold mb-3 text-neutral">Szybko</h3>
+                    <p class="text-neutral-rest text-sm leading-relaxed">Raport w 24-48 h</p>
                 </div>
-                <div class="benefit">
-                    <i class="fas fa-bullseye"></i>
-                    <h3>Konkret</h3>
-                    <p>Checklisty, pytania do dewelopera, jasne rekomendacje</p>
+                <div class="text-center bg-white/80 backdrop-blur-lg p-8 rounded-xl shadow-md transition-all duration-300 border border-success/10 hover:-translate-y-1 hover:shadow-lg hover:border-success/20">
+                    <i class="fas fa-bullseye text-4xl text-success mb-5"></i>
+                    <h3 class="text-base font-semibold mb-3 text-neutral">Konkret</h3>
+                    <p class="text-neutral-rest text-sm leading-relaxed">Checklisty, pytania do dewelopera, jasne rekomendacje</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- What you get -->
-    <section class="deliverables">
-        <div class="container">
-            <h2>Co dokładnie dostajesz</h2>
-            <div class="deliverables-grid">
-                <div class="deliverable">
-                    <i class="fas fa-file-pdf"></i>
-                    <h3>Raport PDF</h3>
-                    <p>Wnioski, rekomendacje i priorytety zmian</p>
+    <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-center text-3xl font-semibold mb-4 text-neutral">Co dokładnie dostajesz</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+                <div class="text-center p-6 border border-gray-200 rounded-lg transition-all duration-300 hover:border-primary hover:-translate-y-2">
+                    <i class="fas fa-file-pdf text-5xl text-primary mb-6"></i>
+                    <h3 class="text-lg font-semibold text-neutral mb-4">Raport PDF</h3>
+                    <p class="text-neutral-rest text-sm">Wnioski, rekomendacje i priorytety zmian</p>
                 </div>
-                <div class="deliverable">
-                    <i class="fas fa-question-circle"></i>
-                    <h3>Lista pytań</h3>
-                    <p>Pytania do dewelopera pod dany układ</p>
+                <div class="text-center p-6 border border-gray-200 rounded-lg transition-all duration-300 hover:border-primary hover:-translate-y-2">
+                    <i class="fas fa-question-circle text-5xl text-primary mb-6"></i>
+                    <h3 class="text-lg font-semibold text-neutral mb-4">Lista pytań</h3>
+                    <p class="text-neutral-rest text-sm">Pytania do dewelopera pod dany układ</p>
                 </div>
-                <div class="deliverable">
-                    <i class="fas fa-clipboard-check"></i>
-                    <h3>Checklista odbioru</h3>
-                    <p>Druk do wizyty w mieszkaniu</p>
+                <div class="text-center p-6 border border-gray-200 rounded-lg transition-all duration-300 hover:border-primary hover:-translate-y-2">
+                    <i class="fas fa-clipboard-check text-5xl text-primary mb-6"></i>
+                    <h3 class="text-lg font-semibold text-neutral mb-4">Checklista odbioru</h3>
+                    <p class="text-neutral-rest text-sm">Druk do wizyty w mieszkaniu</p>
                 </div>
-                <div class="deliverable">
-                    <i class="fas fa-book"></i>
-                    <h3>Mini-ebook</h3>
-                    <p>Jak wybierać mieszkania rozsądnie (wersja BETA)</p>
+                <div class="text-center p-6 border border-gray-200 rounded-lg transition-all duration-300 hover:border-primary hover:-translate-y-2">
+                    <i class="fas fa-book text-5xl text-primary mb-6"></i>
+                    <h3 class="text-lg font-semibold text-neutral mb-4">Mini-ebook</h3>
+                    <p class="text-neutral-rest text-sm">Jak wybierać mieszkania rozsądnie (wersja BETA)</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Pricing -->
-    <section id="cennik" class="pricing">
-        <div class="container">
-            <h2>Cennik</h2>
-            <p class="section-subtitle">Wybierz plan odpowiedni dla Twoich potrzeb</p>
-            <div class="pricing-cards">
-                <div class="pricing-card featured">
-                    <div class="card-header">
-                        <h3>BETA (z ręczną weryfikacją)</h3>
-                        <div class="price">
-                            <span class="amount">29 zł</span>
-                        </div>
-                        <p class="price-note">Oferta limitowana</p>
+    <section id="cennik" class="py-20 bg-gradient-to-br from-neutral-light via-white to-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-center text-3xl font-semibold mb-4 text-neutral">Cennik</h2>
+            <p class="text-center text-neutral-rest text-lg mb-12">Wybierz plan odpowiedni dla Twoich potrzeb</p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl mx-auto mt-12">
+                <div class="relative bg-white/90 backdrop-blur-lg border border-primary rounded-xl p-8 text-center shadow-lg shadow-primary/25 transform scale-105">
+                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-primary to-primary-dark text-white py-2 px-5 rounded-full text-xs font-semibold shadow-md shadow-primary/30">
+                        NAJPOPULARNIEJSZY
                     </div>
-                    <ul class="features">
-                        <li><i class="fas fa-check"></i> Skrócony raport PDF + ręczna weryfikacja kluczowych wniosków</li>
-                        <li><i class="fas fa-check"></i> Lista pytań do dewelopera</li>
-                        <li><i class="fas fa-check"></i> Checklista odbioru mieszkania</li>
-                        <li><i class="fas fa-check"></i> Mini-ebook</li>
+                    <div class="mb-4">
+                        <h3 class="text-xl font-semibold mb-4 text-neutral">BETA (z ręczną weryfikacją)</h3>
+                        <div class="mb-4">
+                            <span class="text-5xl font-bold text-blue-600">29 zł</span>
+                        </div>
+                        <p class="text-amber-500 font-semibold text-sm">Oferta limitowana</p>
+                    </div>
+                    <ul class="text-left space-y-3 mb-8">
+                        <li class="flex items-center gap-2 text-gray-600">
+                            <i class="fas fa-check text-green-500 text-sm"></i>
+                            Skrócony raport PDF + ręczna weryfikacja kluczowych wniosków
+                        </li>
+                        <li class="flex items-center gap-2 text-gray-600">
+                            <i class="fas fa-check text-green-500 text-sm"></i>
+                            Lista pytań do dewelopera
+                        </li>
+                        <li class="flex items-center gap-2 text-gray-600">
+                            <i class="fas fa-check text-green-500 text-sm"></i>
+                            Checklista odbioru mieszkania
+                        </li>
+                        <li class="flex items-center gap-2 text-gray-600">
+                            <i class="fas fa-check text-green-500 text-sm"></i>
+                            Mini-ebook
+                        </li>
                     </ul>
-                    <a href="#beta-form" class="btn-primary">Wybierz BETA</a>
-                    <p class="after-beta-note">Po BECIE dostępny będzie tylko pełny raport</p>
+                    <a href="#beta-form" class="inline-flex items-center gap-3 bg-gradient-to-br from-primary to-primary-dark text-white px-8 py-3 rounded font-medium transition-all duration-200 hover:from-primary-dark hover:to-primary-darker hover:-translate-y-px hover:shadow-lg">
+                        Wybierz BETA
+                    </a>
+                    <p class="text-xs text-gray-500 mt-4">Po BECIE dostępny będzie tylko pełny raport</p>
                 </div>
                 
-                <div class="pricing-card">
-                    <div class="card-header">
-                        <h3>Pełny raport</h3>
-                        <div class="price">
-                            <span class="amount">149 zł</span>
+                <div class="bg-white/90 backdrop-blur-lg border border-primary/10 rounded-xl p-8 text-center shadow-md">
+                    <div class="mb-4">
+                        <h3 class="text-xl font-semibold mb-4 text-neutral">Pełny raport</h3>
+                        <div class="mb-4">
+                            <span class="text-5xl font-bold text-blue-600">149 zł</span>
                         </div>
                     </div>
-                    <ul class="features">
-                        <li><i class="fas fa-check"></i> Pełny raport PDF z priorytetami</li>
-                        <li><i class="fas fa-check"></i> Lista pytań do dewelopera</li>
-                        <li><i class="fas fa-check"></i> Checklista odbioru mieszkania</li>
-                        <li><i class="fas fa-check"></i> Mini-ebook</li>
+                    <ul class="text-left space-y-3 mb-8">
+                        <li class="flex items-center gap-2 text-gray-600">
+                            <i class="fas fa-check text-green-500 text-sm"></i>
+                            Pełny raport PDF z priorytetami
+                        </li>
+                        <li class="flex items-center gap-2 text-gray-600">
+                            <i class="fas fa-check text-green-500 text-sm"></i>
+                            Lista pytań do dewelopera
+                        </li>
+                        <li class="flex items-center gap-2 text-gray-600">
+                            <i class="fas fa-check text-green-500 text-sm"></i>
+                            Checklista odbioru mieszkania
+                        </li>
+                        <li class="flex items-center gap-2 text-gray-600">
+                            <i class="fas fa-check text-green-500 text-sm"></i>
+                            Mini-ebook
+                        </li>
                     </ul>
-                    <button class="btn-secondary" disabled>Wkrótce</button>
+                    <button class="bg-gray-200 text-gray-400 px-8 py-3 rounded font-medium cursor-not-allowed" disabled>
+                        Wkrótce
+                    </button>
                 </div>
             </div>
             
             <!-- Value stacking -->
-            <div class="value-stacking">
-                <h3>Wartość katalogowa:</h3>
-                <div class="value-items">
-                    <div class="value-item">
-                        <span class="item-name">Analiza rzutu</span>
-                        <span class="item-price">250 zł</span>
+            <div class="mt-12 p-8 bg-neutral-light rounded-lg text-center">
+                <h3 class="text-xl font-semibold text-neutral mb-6">Wartość katalogowa:</h3>
+                <div class="max-w-md mx-auto space-y-3">
+                    <div class="flex justify-between items-center py-2 border-b border-gray-300">
+                        <span class="text-neutral">Analiza rzutu</span>
+                        <span class="font-semibold text-neutral">250 zł</span>
                     </div>
-                    <div class="value-item">
-                        <span class="item-name">Lista pytań do dewelopera</span>
-                        <span class="item-price">150 zł</span>
+                    <div class="flex justify-between items-center py-2 border-b border-gray-300">
+                        <span class="text-neutral">Lista pytań do dewelopera</span>
+                        <span class="font-semibold text-neutral">150 zł</span>
                     </div>
-                    <div class="value-item">
-                        <span class="item-name">Checklista odbioru</span>
-                        <span class="item-price">120 zł</span>
+                    <div class="flex justify-between items-center py-2 border-b border-gray-300">
+                        <span class="text-neutral">Checklista odbioru</span>
+                        <span class="font-semibold text-neutral">120 zł</span>
                     </div>
-                    <div class="value-item">
-                        <span class="item-name">Mini-ebook</span>
-                        <span class="item-price">79 zł</span>
+                    <div class="flex justify-between items-center py-2 border-b border-gray-300">
+                        <span class="text-neutral">Mini-ebook</span>
+                        <span class="font-semibold text-neutral">79 zł</span>
                     </div>
-                    <div class="value-total">
-                        <span class="total-label">Łącznie katalogowo:</span>
-                        <span class="total-price">599 zł</span>
+                    <div class="flex justify-between items-center py-3 border-t-2 border-gray-400 mt-4">
+                        <span class="font-bold text-lg text-neutral">Łącznie katalogowo:</span>
+                        <span class="font-bold text-xl text-blue-600">599 zł</span>
                     </div>
                 </div>
-                <div class="current-offer">
-                    <p class="offer-text">→ dziś: <strong>29 zł (BETA z ręczną weryfikacją)</strong></p>
-                    <p class="future-text">Po BECIE: Pełny raport 149 zł</p>
+                <div class="mt-6">
+                    <p class="text-lg text-neutral mb-2">→ dziś: <strong>29 zł (BETA z ręczną weryfikacją)</strong></p>
+                    <p class="text-sm text-neutral-rest">Po BECIE: Pełny raport 149 zł</p>
                 </div>
             </div>
             
             <!-- Guarantee -->
-            <div class="guarantee">
-                <div class="guarantee-content">
-                    <i class="fas fa-shield-alt"></i>
-                    <div class="guarantee-text">
-                        <h3>Gwarancja satysfakcji</h3>
-                        <p>"Jeśli w 7 dni uznasz, że raport Ci nie pomógł — zwracamy pieniądze, bez pytań."</p>
-                        <p class="guarantee-how">Jak to działa: Wyślij e-mail z numerem zamówienia → zwrot do 48 h.</p>
+            <div class="mt-12 bg-white border border-primary/20 rounded-lg p-8">
+                <div class="flex items-start gap-6">
+                    <i class="fas fa-shield-alt text-4xl text-primary mt-2"></i>
+                    <div>
+                        <h3 class="text-xl font-semibold text-neutral mb-3">Gwarancja satysfakcji</h3>
+                        <p class="text-neutral-rest mb-3">"Jeśli w 7 dni uznasz, że raport Ci nie pomógł — zwracamy pieniądze, bez pytań."</p>
+                        <p class="text-sm text-neutral-rest italic">Jak to działa: Wyślij e-mail z numerem zamówienia → zwrot do 48 h.</p>
                     </div>
                 </div>
             </div>
@@ -359,80 +432,79 @@
     </section>
 
     <!-- CTA Form -->
-    <section id="beta-form" class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Sprawdź swoje mieszkanie!</h2>
-                <p>Dołącz do wersji BETA i otrzymaj pierwszą analizę w specjalnej cenie</p>
-                
-                <form id="betaForm" class="beta-form">
-                    <div class="form-group">
-                        <label for="fullName">Imię i nazwisko *</label>
-                        <input type="text" id="fullName" name="fullName" required>
+    <section id="beta-form" class="py-20 bg-gradient-to-br from-primary to-primary-dark relative overflow-hidden">
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-semibold text-white mb-4">Sprawdź swoje mieszkanie!</h2>
+                <p class="text-xl text-white/90">Dołącz do wersji BETA i otrzymaj pierwszą analizę w specjalnej cenie</p>
+            </div>
+            
+            <div class="max-w-2xl mx-auto bg-white/95 backdrop-blur-lg rounded-xl p-8 shadow-xl">
+                <form id="betaForm" class="space-y-6">
+                    <div class="space-y-2">
+                        <label for="fullName" class="block text-sm font-medium text-neutral">Imię i nazwisko *</label>
+                        <input type="text" id="fullName" name="fullName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200">
                     </div>
                     
-                    <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required>
+                    <div class="space-y-2">
+                        <label for="email" class="block text-sm font-medium text-neutral">Email *</label>
+                        <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200">
                     </div>
                     
-                    <div class="form-group">
-                        <label for="phone">Telefon (opcjonalne)</label>
-                        <input type="tel" id="phone" name="phone">
+                    <div class="space-y-2">
+                        <label for="phone" class="block text-sm font-medium text-neutral">Telefon (opcjonalne)</label>
+                        <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200">
                     </div>
                     
-                    <div class="form-group file-upload">
-                        <label for="floorPlan">Rzut mieszkania (PDF/JPG/PNG) *</label>
-                        <div class="file-drop-zone" id="fileDropZone">
-                            <i class="fas fa-cloud-upload-alt"></i>
-                            <p>Przeciągnij plik tutaj lub kliknij aby wybrać</p>
-                            <input type="file" id="floorPlan" name="floorPlan" accept=".pdf,.jpg,.jpeg,.png" required>
+                    <div class="space-y-2">
+                        <label for="floorPlan" class="block text-sm font-medium text-neutral">Rzut mieszkania (PDF/JPG/PNG) *</label>
+                        <div class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center transition-colors duration-300 hover:border-primary cursor-pointer" id="fileDropZone">
+                            <i class="fas fa-cloud-upload-alt text-4xl text-gray-400 mb-4"></i>
+                            <p class="text-gray-600 mb-2">Przeciągnij plik tutaj lub kliknij aby wybrać</p>
+                            <input type="file" id="floorPlan" name="floorPlan" accept=".pdf,.jpg,.jpeg,.png" required class="hidden">
                         </div>
-                        <div id="filePreview" class="file-preview"></div>
+                        <div id="filePreview" class="mt-4 p-4 bg-gray-50 rounded-lg hidden"></div>
                     </div>
                     
-                    <div class="form-group">
-                        <label for="additionalInfo">Dodatkowe informacje (opcjonalne)</label>
-                        <textarea id="additionalInfo" name="additionalInfo" rows="4" placeholder="Opisz swoje obawy lub pytania dotyczące mieszkania..."></textarea>
+                    <div class="space-y-2">
+                        <label for="additionalInfo" class="block text-sm font-medium text-neutral">Dodatkowe informacje (opcjonalne)</label>
+                        <textarea id="additionalInfo" name="additionalInfo" rows="4" placeholder="Opisz swoje obawy lub pytania dotyczące mieszkania..." class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 resize-none"></textarea>
                     </div>
                     
-                    <div class="form-group checkbox-group">
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="dataConsent" name="dataConsent" required>
-                            <span class="checkmark"></span>
-                            Zgadzam się na przetwarzanie danych osobowych *
+                    <div class="space-y-4">
+                        <label class="flex items-start gap-3 cursor-pointer">
+                            <input type="checkbox" id="dataConsent" name="dataConsent" required class="mt-1 w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary">
+                            <span class="text-sm text-neutral">Zgadzam się na przetwarzanie danych osobowych *</span>
+                        </label>
+                        
+                        <label class="flex items-start gap-3 cursor-pointer">
+                            <input type="checkbox" id="newsletter" name="newsletter" class="mt-1 w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary">
+                            <span class="text-sm text-neutral">Chcę otrzymywać newsletter z poradami o mieszkaniach</span>
                         </label>
                     </div>
                     
-                    <div class="form-group checkbox-group">
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="newsletter" name="newsletter">
-                            <span class="checkmark"></span>
-                            Chcę otrzymywać newsletter z poradami o mieszkaniach
-                        </label>
-                    </div>
-                    
-                    <button type="submit" class="btn-primary btn-large">
+                    <button type="submit" class="w-full bg-gradient-to-r from-primary to-primary-dark text-white px-8 py-4 rounded-lg font-medium text-lg transition-all duration-200 hover:from-primary-dark hover:to-primary-darker hover:-translate-y-px hover:shadow-lg flex items-center justify-center gap-3">
                         <span class="btn-text">Wyślij do analizy – BETA</span>
-                        <span class="btn-loading">
+                        <span class="btn-loading hidden">
                             <i class="fas fa-spinner fa-spin"></i>
                             Wysyłanie...
                         </span>
                     </button>
                 </form>
                 
-                <div class="form-info">
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>Wyślemy Ci szczegółowy raport w ciągu 24-48h</span>
+                <div class="mt-8 space-y-4">
+                    <div class="flex items-center gap-3 text-neutral-rest">
+                        <i class="fas fa-envelope text-primary"></i>
+                        <span class="text-sm">Wyślemy Ci szczegółowy raport w ciągu 24-48h</span>
                     </div>
-                    <div class="info-item">
-                        <i class="fas fa-shield-alt"></i>
-                        <span>Twoje dane są bezpieczne - nie udostępniamy ich deweloperom</span>
+                    <div class="flex items-center gap-3 text-neutral-rest">
+                        <i class="fas fa-shield-alt text-primary"></i>
+                        <span class="text-sm">Twoje dane są bezpieczne - nie udostępniamy ich deweloperom</span>
                     </div>
-                    <div class="info-item">
-                        <i class="fas fa-star"></i>
-                        <span>Jako uczestnik BETA otrzymasz dożywotni rabat 50% na przyszłe analizy</span>
+                    <div class="flex items-center gap-3 text-neutral-rest">
+                        <i class="fas fa-star text-primary"></i>
+                        <span class="text-sm">Jako uczestnik BETA otrzymasz dożywotni rabat 50% na przyszłe analizy</span>
                     </div>
                 </div>
             </div>
@@ -440,47 +512,47 @@
     </section>
 
     <!-- FAQ -->
-    <section id="faq" class="faq">
-        <div class="container">
-            <h2>Często zadawane pytania</h2>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Czy to legalne?</h3>
-                        <i class="fas fa-chevron-down"></i>
+    <section id="faq" class="py-20 bg-neutral-light">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-center text-3xl font-semibold mb-12 text-neutral">Często zadawane pytania</h2>
+            <div class="max-w-4xl mx-auto space-y-4">
+                <div class="bg-white rounded-lg border border-gray-200 overflow-hidden transition-all duration-300 hover:shadow-md">
+                    <div class="p-6 cursor-pointer transition-colors duration-200 hover:bg-gray-50 flex justify-between items-center" onclick="toggleFaq(this)">
+                        <h3 class="text-lg font-semibold text-neutral">Czy to legalne?</h3>
+                        <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300"></i>
                     </div>
-                    <div class="faq-answer">
-                        <p>Tak, analiza publicznie dostępnych rzutów mieszkań jest całkowicie legalna. Nie naruszamy żadnych praw autorskich ani umów z deweloperami.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Jak długo trwa analiza?</h3>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Standardowa analiza trwa 24-48 godzin. W wersji BETA może to potrwać nieco dłużej ze względu na ręczną weryfikację wyników.</p>
+                    <div class="hidden px-6 pb-6">
+                        <p class="text-neutral-rest">Tak, analiza publicznie dostępnych rzutów mieszkań jest całkowicie legalna. Nie naruszamy żadnych praw autorskich ani umów z deweloperami.</p>
                     </div>
                 </div>
                 
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Co jeśli rzut jest nieczytelny?</h3>
-                        <i class="fas fa-chevron-down"></i>
+                <div class="bg-white rounded-lg border border-gray-200 overflow-hidden transition-all duration-300 hover:shadow-md">
+                    <div class="p-6 cursor-pointer transition-colors duration-200 hover:bg-gray-50 flex justify-between items-center" onclick="toggleFaq(this)">
+                        <h3 class="text-lg font-semibold text-neutral">Jak długo trwa analiza?</h3>
+                        <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300"></i>
                     </div>
-                    <div class="faq-answer">
-                        <p>Jeśli rzut będzie nieczytelny, skontaktujemy się z Tobą w celu przesłania lepszej jakości pliku lub zwrócimy pieniądze.</p>
+                    <div class="hidden px-6 pb-6">
+                        <p class="text-neutral-rest">Standardowa analiza trwa 24-48 godzin. W wersji BETA może to potrwać nieco dłużej ze względu na ręczną weryfikację wyników.</p>
                     </div>
                 </div>
                 
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Czy analizujecie mieszkania używane?</h3>
-                        <i class="fas fa-chevron-down"></i>
+                <div class="bg-white rounded-lg border border-gray-200 overflow-hidden transition-all duration-300 hover:shadow-md">
+                    <div class="p-6 cursor-pointer transition-colors duration-200 hover:bg-gray-50 flex justify-between items-center" onclick="toggleFaq(this)">
+                        <h3 class="text-lg font-semibold text-neutral">Co jeśli rzut jest nieczytelny?</h3>
+                        <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300"></i>
                     </div>
-                    <div class="faq-answer">
-                        <p>Tak, analizujemy również mieszkania używane. Wystarczy rzut mieszkania lub szkic rozkładu pomieszczeń.</p>
+                    <div class="hidden px-6 pb-6">
+                        <p class="text-neutral-rest">Jeśli rzut będzie nieczytelny, skontaktujemy się z Tobą w celu przesłania lepszej jakości pliku lub zwrócimy pieniądze.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg border border-gray-200 overflow-hidden transition-all duration-300 hover:shadow-md">
+                    <div class="p-6 cursor-pointer transition-colors duration-200 hover:bg-gray-50 flex justify-between items-center" onclick="toggleFaq(this)">
+                        <h3 class="text-lg font-semibold text-neutral">Czy analizujecie mieszkania używane?</h3>
+                        <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                    </div>
+                    <div class="hidden px-6 pb-6">
+                        <p class="text-neutral-rest">Tak, analizujemy również mieszkania używane. Wystarczy rzut mieszkania lub szkic rozkładu pomieszczeń.</p>
                     </div>
                 </div>
             </div>
@@ -488,63 +560,67 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <i class="fas fa-home-user"></i>
-                    <span>MieszkanieSprawdzam</span>
-                    <p>Niezależna analiza mieszkań z wykorzystaniem sztucznej inteligencji</p>
+    <footer class="bg-neutral text-white py-16">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center text-xl font-semibold mb-4">
+                        <i class="fas fa-home-user mr-3 text-2xl"></i>
+                        <span>MieszkanieSprawdzam</span>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">Niezależna analiza mieszkań z wykorzystaniem sztucznej inteligencji</p>
                 </div>
-                <div class="footer-links">
-                    <h4>Nasze wartości</h4>
-                    <ul>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Nasze wartości</h4>
+                    <ul class="space-y-2 text-gray-300">
                         <li>Niezależność</li>
                         <li>Rzetelność</li>
                         <li>Troska o klienta</li>
                     </ul>
                 </div>
-                <div class="footer-contact">
-                    <h4>Kontakt</h4>
-                    <p>Email: info@mieszkaniesprawdzam.pl</p>
-                    <p>Telefon: +48 123 456 789</p>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Kontakt</h4>
+                    <div class="space-y-2 text-gray-300">
+                        <p>Email: info@mieszkaniesprawdzam.pl</p>
+                        <p>Telefon: +48 123 456 789</p>
+                    </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 MieszkanieSprawdzam. Wszystkie prawa zastrzeżone.</p>
-                <div class="footer-legal">
-                    <a href="#privacy">Polityka prywatności</a>
-                    <a href="#terms">Regulamin</a>
+            <div class="border-t border-gray-600 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-300">&copy; 2025 MieszkanieSprawdzam. Wszystkie prawa zastrzeżone.</p>
+                <div class="flex gap-6">
+                    <a href="#privacy" class="text-gray-300 hover:text-white transition-colors duration-200">Polityka prywatności</a>
+                    <a href="#terms" class="text-gray-300 hover:text-white transition-colors duration-200">Regulamin</a>
                 </div>
             </div>
         </div>
     </footer>
 
     <!-- Success Modal -->
-    <div id="successModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <i class="fas fa-check-circle"></i>
-                <h3>Formularz wysłany pomyślnie!</h3>
+    <div id="successModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-xl p-8 max-w-md mx-4 shadow-2xl transform transition-all duration-300">
+            <div class="text-center mb-6">
+                <i class="fas fa-check-circle text-5xl text-success mb-4"></i>
+                <h3 class="text-2xl font-semibold text-neutral">Formularz wysłany pomyślnie!</h3>
             </div>
-            <div class="modal-body">
-                <p>Dziękujemy za zgłoszenie do programu BETA. Analizę Twojego mieszkania otrzymasz w ciągu 24-48 godzin.</p>
-                <div class="timeline">
-                    <div class="timeline-item active">
-                        <i class="fas fa-check"></i>
-                        <span>Formularz wysłany</span>
+            <div class="mb-6">
+                <p class="text-neutral-rest mb-6">Dziękujemy za zgłoszenie do programu BETA. Analizę Twojego mieszkania otrzymasz w ciągu 24-48 godzin.</p>
+                <div class="space-y-3">
+                    <div class="flex items-center gap-3 p-3 bg-success/10 rounded-lg">
+                        <i class="fas fa-check text-success"></i>
+                        <span class="text-neutral text-sm">Formularz wysłany</span>
                     </div>
-                    <div class="timeline-item">
-                        <i class="fas fa-cog"></i>
-                        <span>Analiza AI w toku</span>
+                    <div class="flex items-center gap-3 p-3 bg-gray-100 rounded-lg">
+                        <i class="fas fa-cog text-gray-400"></i>
+                        <span class="text-neutral text-sm">Analiza AI w toku</span>
                     </div>
-                    <div class="timeline-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>Raport wysłany</span>
+                    <div class="flex items-center gap-3 p-3 bg-gray-100 rounded-lg">
+                        <i class="fas fa-envelope text-gray-400"></i>
+                        <span class="text-neutral text-sm">Raport wysłany</span>
                     </div>
                 </div>
             </div>
-            <button class="btn-primary" onclick="closeModal()">Zamknij</button>
+            <button class="w-full bg-gradient-to-r from-primary to-primary-dark text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:from-primary-dark hover:to-primary-darker" onclick="closeModal()">Zamknij</button>
         </div>
     </div>
 
