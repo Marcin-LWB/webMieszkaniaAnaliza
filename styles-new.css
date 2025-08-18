@@ -117,6 +117,28 @@
     z-index: 0;
 }
 
+/* Combined section gradient */
+.section-glow-combined {
+    position: relative;
+    overflow: hidden;
+}
+
+.section-glow-combined::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    bottom: -20%;
+    left: 0;
+    right: 0;
+    background: 
+        radial-gradient(circle at 60% 35%, rgba(34,197,94,0.25) 0%, rgba(34,197,94,0.12) 12%, rgba(34,197,94,0.04) 25%, transparent 45%),
+        radial-gradient(circle at 110% 40%, rgba(254,221,164,0.20) 0%, rgba(254,221,164,0.10) 15%, rgba(254,221,164,0.035) 35%, transparent 50%),
+        radial-gradient(circle at 60% 80%, rgba(254,221,164,0.17) 0%, rgba(254,221,164,0.10) 12%, rgba(254,221,164,0.055) 28%, transparent 45%),
+        radial-gradient(circle at 115% 90%, rgba(239,68,68,0.10) 0%, rgba(239,68,68,0.05) 15%, rgba(239,68,68,0.02) 30%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
 /* Text utilities */
 .text-muted {
     color: #949698;
@@ -192,7 +214,9 @@
 /* Ensure content is above gradient overlays */
 .section-glow-1 > *,
 .section-glow-2 > *,
-.section-glow-3 > * {
+.section-glow-3 > *,
+.section-glow-combined > *,
+.subtle-grid > * {
     position: relative;
     z-index: 1;
 }
@@ -214,4 +238,21 @@ nav {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+}
+
+/* Delikatna krata w tle dla sekcji */
+.subtle-grid {
+    position: relative;
+}
+
+.subtle-grid::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 80px 80px;
+    pointer-events: none;
+    z-index: 0;
 }
